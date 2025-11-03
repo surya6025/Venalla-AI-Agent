@@ -1,0 +1,175 @@
+{
+  "system": {
+    "name": "Venalla AI Agent",
+    "version": "1.0.0",
+    "environment": "production",
+    "debug_mode": false,
+    "log_level": "INFO"
+  },
+  "server": {
+    "host": "localhost",
+    "port": 8080,
+    "enable_api": true,
+    "enable_websocket": true,
+    "cors_enabled": false,
+    "allowed_origins": []
+  },
+  "llm_providers": {
+    "default_provider": "ollama",
+    "openai": {
+      "enabled": false,
+      "api_key": "your-openai-api-key-here",
+      "model": "gpt-4",
+      "temperature": 0.7,
+      "max_tokens": 4096,
+      "timeout": 60
+    },
+    "anthropic": {
+      "enabled": false,
+      "api_key": "your-anthropic-api-key-here",
+      "model": "claude-3-opus-20240229",
+      "temperature": 0.7,
+      "max_tokens": 4096,
+      "timeout": 60
+    },
+    "ollama": {
+      "enabled": true,
+      "base_url": "http://localhost:11434",
+      "model": "llama2",
+      "temperature": 0.7,
+      "timeout": 120
+    },
+    "google": {
+      "enabled": false,
+      "api_key": "your-google-api-key-here",
+      "model": "gemini-pro",
+      "temperature": 0.7
+    }
+  },
+  "voice": {
+    "enabled": true,
+    "stt_provider": "whisper",
+    "tts_provider": "pyttsx3",
+    "wake_word": "hey venalla",
+    "wake_word_sensitivity": 0.5,
+    "language": "en-US",
+    "voice_rate": 150,
+    "voice_volume": 0.9
+  },
+  "desktop_control": {
+    "enabled": true,
+    "require_confirmation": true,
+    "dangerous_commands_blocked": true,
+    "allowed_directories": [],
+    "blocked_directories": [
+      "/system",
+      "/System",
+      "C:\\Windows\\System32",
+      "/etc",
+      "/usr/bin"
+    ],
+    "screenshot_enabled": true,
+    "automation_enabled": true
+  },
+  "memory": {
+    "enabled": true,
+    "vector_db": "chroma",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "max_memory_items": 10000,
+    "memory_retention_days": 90,
+    "auto_cleanup": true
+  },
+  "plugins": {
+    "enabled": true,
+    "auto_load": true,
+    "auto_update": false,
+    "plugin_directory": "plugins",
+    "require_signature": false,
+    "enabled_plugins": []
+  },
+  "security": {
+    "encryption_enabled": true,
+    "credential_storage": "keyring",
+    "require_auth": false,
+    "session_timeout": 3600,
+    "max_failed_attempts": 5,
+    "ip_whitelist": [],
+    "sandbox_plugins": true
+  },
+  "workflow": {
+    "max_parallel_tasks": 10,
+    "task_timeout": 300,
+    "auto_retry": true,
+    "max_retries": 3,
+    "retry_delay": 5
+  },
+  "error_handling": {
+    "auto_recovery": true,
+    "auto_install_dependencies": true,
+    "error_reporting": false,
+    "crash_recovery": true,
+    "save_state_interval": 60
+  },
+  "logging": {
+    "log_directory": "logs",
+    "max_log_size_mb": 100,
+    "log_rotation": true,
+    "log_retention_days": 30,
+    "log_to_console": true,
+    "log_to_file": true,
+    "detailed_error_logs": true
+  },
+  "ui": {
+    "theme": "dark",
+    "font_size": 12,
+    "window_width": 1280,
+    "window_height": 720,
+    "show_system_tray": true,
+    "minimize_to_tray": true,
+    "start_minimized": false
+  },
+  "notifications": {
+    "enabled": true,
+    "desktop_notifications": true,
+    "sound_enabled": false,
+    "notification_level": "info"
+  },
+  "performance": {
+    "max_memory_mb": 4096,
+    "cpu_limit_percent": 80,
+    "enable_caching": true,
+    "cache_size_mb": 512,
+    "optimize_performance": true
+  },
+  "data": {
+    "data_directory": "data",
+    "cache_directory": "data/cache",
+    "memory_directory": "data/memory",
+    "backup_enabled": true,
+    "backup_interval_hours": 24,
+    "max_backups": 7
+  },
+  "network": {
+    "proxy_enabled": false,
+    "proxy_url": "",
+    "timeout": 30,
+    "max_retries": 3,
+    "retry_delay": 2
+  },
+  "features": {
+    "computer_vision": true,
+    "web_scraping": true,
+    "file_operations": true,
+    "system_commands": true,
+    "voice_control": true,
+    "automation": true,
+    "multi_agent": true,
+    "self_update": false
+  },
+  "advanced": {
+    "experimental_features": false,
+    "developer_mode": false,
+    "custom_modules_path": "",
+    "telemetry_enabled": false
+  }
+}
